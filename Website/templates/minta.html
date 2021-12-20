@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Form Permintaan Penjadwalan Produk</h1>
+                <p><b>Aturan penulisan waktu:</b></p>
+                <p><b>YYYY-mm-DD HH-MM-SS</b></p>
+                <p><b>Jam ditulis dalam mode 24Jam</b></p>
+                <p><b>Contoh: 2021-08-20 14:30:59</b></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+{% block content2 %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {% if pesan %}
+                    <div class="alert alert-success">{{pesan}}</div>
+                {% endif %}
+                <form action="/produk/minta-jadwal-produk/" method="post">
+                    {% csrf_token %}
+                    {{minta|crispy}}
+
+                    <button type="Submit" class="btn btn-outline-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

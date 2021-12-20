@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="display-4">Penjadwalan Project Shop SPTM</h1>
+<p class="lead">{{subjudul}}</p>
+<a class='btn btn-secondary' href="{% url 'produkdijadwalkan' %}" title="">Kembali</a>
+{% endblock header %}
+
+{% block content2 %}
+
+
+
+{% endblock content2 %}
+
+
+
+
+
+{% block content3 %}
+
+    <h1>Jadwal Operasi Produk: B01-M01-V01</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Waktu Mulai</th>
+            <th>Waktu Selesai</th>
+            <th>Material Dikerjakan</th>
+            <th>Material Penyusun</th>
+            <th>Peralatan Kerja</th>
+            <th>Grup Kerja</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Dec 9, 2021 : 09:00 a.m.</td>
+            <td>Dec 9, 2021 : 10:15 a.m.</td>
+            <td>MT1-1-2(Item A-A-B)</td>
+            <td></td>
+            <td>PLT02(Peralatan B)</td>
+            <td>(Grup Kerja EL1) E,F,G</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Dec 9, 2021 : 10:15 a.m.</td>
+            <td>Dec 9, 2021 : 11:15 a.m.</td>
+            <td>MT1-1-3(Item A-A-C)</td>
+            <td></td>
+            <td>PLT01(Peralatan A)</td>
+            <td>(Grup Kerja ME1) A,B,C,D</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Dec 9, 2021 : 11:15 a.m.</td>
+            <td>Dec 9, 2021 : 12:00 a.m.</td>
+            <td>MT1-1-1(Item A-A-A)</td>
+            <td></td>
+            <td>PLT03(Peralatan C)</td>
+            <td>(Grup Kerja ME1) A,B,C,D</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Dec 9, 2021 : 01:00 p.m.</td>
+            <td>Dec 9, 2021 : 02:15 p.m.</td>
+            <td>MT1-2(Item A-B)</td>
+            <td></td>
+            <td>PLT02(Peralatan B)</td>
+            <td>(Grup Kerja EL1) E,F,G</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Dec 9, 2021 : 02:15 p.m.</td>
+            <td>Dec 9, 2021 : 03:15 p.m.</td>
+            <td>MT1-1(Item A-A)</td>
+            <td>MT1-1-1(Item A-A-A),<br>MT1-1-2(Item A-A-B),<br>MT1-1-3(Item A-A-C),<br></td>
+            <td>PLT01(Peralatan A)</td>
+            <td>(Grup Kerja ME1) A,B,C,D</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Dec 9, 2021 : 03:15 p.m.</td>
+            <td>Dec 9, 2021 : 04:00 p.m.</td>
+            <td>MT1-1(Item A-A)</td>
+            <td>MT1-1-1(Item A-A-A),<br>MT1-1-2(Item A-A-B),<br>MT1-1-3(Item A-A-C),<br></td>
+            <td>PLT01(Peralatan A),<br>PLT03(Peralatan C)</td>
+            <td>(Grup Kerja ME1) A,B,C,D</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Dec 9, 2021 : 04:00 p.m.</td>
+            <td>Dec 9, 2021 : 05:00 p.m.</td>
+            <td>MT1(Item A)</td>
+            <td>MT1-1(Item A-A),<br>MT1-2(Item A-B),<br></td>
+            <td>PLT01(Peralatan A),<br>PLT03(Peralatan C)</td>
+            <td>(Grup Kerja ME1) A,B,C,D</td>
+        </tr>
+    </table>
+
+{% endblock  %}

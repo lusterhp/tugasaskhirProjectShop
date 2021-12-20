@@ -1,0 +1,55 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Form Pembaharuan Produk yang Dijadwalkan</h1>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+{% block content2 %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {% if pesan %}
+                    <div class="alert alert-success">{{pesan}}</div>
+                {% endif %}
+
+                {% for message in messages %}
+                    {% if message %}
+                        <div class="alert alert-success">{{message}}</div>
+                    {% endif %}
+                {% endfor %}
+
+                <form action="{% url 'update_produkdijadwalkan' home.id %}" method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+
+                    <button type="Submit" class="btn btn-outline-primary">Save</button>
+                    <a href="{% url 'produkdijadwalkan' %}" class='btn btn-danger'>Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

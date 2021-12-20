@@ -1,0 +1,19 @@
+
+<div class="tab-pane fade" id="peralatan" role="tabpanel" aria-labelledby="peralatan-tab">
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Nama Peralatan</th>
+            <th>Penghapusan</th>
+        </tr>
+        
+        {%for list1 in list3%}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>({{list1.kode_alat}}) <a href="{% url 'update_alat' list1.id %}">{{list1.nama_alat}}</a></td>
+                <td><a class='btn btn-danger' href="{% url 'deletealat' list1.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

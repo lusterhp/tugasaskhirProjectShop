@@ -1,0 +1,24 @@
+
+
+<div class="tab-pane fade" id="grup" role="tabpanel" aria-labelledby="grup-tab">
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Tipe Grup Kerja</th>
+            <th>Nama Grup Kerja</th>
+            <th>Nama-nama Personil</th>
+            <th>Penghapusan</th>
+        </tr>
+        
+        {%for list2 in list2%}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td><a href="{% url 'update_grup' list2.id %}">{{list2.kode_grup}}</a></td>
+                <td>{{list2.nama_grup}}</td>
+                <td>{{list2.nama_personil}}</td>
+                <td><a class='btn btn-danger' href="{% url 'deletegrup' list2.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

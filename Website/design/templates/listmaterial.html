@@ -1,0 +1,33 @@
+
+<div class="tab-pane fade" id="material" role="tabpanel" aria-labelledby="material-tab">
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Material</th>
+            <th>Supplier</th>
+            <th>Set Material</th>
+            <th>Penghapusan</th>
+        </tr>
+        {% for m in bom %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>({{m.id_material}}) <a href="{% url 'update_material' m.id %}">{{m.nama_material}}</a></td>
+                {% if m.nama_supplier != None %}
+                <td>{{m.nama_supplier}}</td>
+                {% endif %}
+                {% if m.nama_supplier == None %}
+                <td></td>
+                {% endif %}
+                <td>
+                    {% for n in bom %}
+                        {% if n.penyusun_produk_id == m.id %}
+                            {{n.id_material}},<br>
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td><a class='btn btn-danger' href="{% url 'delete2' m.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

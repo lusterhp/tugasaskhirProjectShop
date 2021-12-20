@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="display-4">Penjadwalan Project Shop SPTM</h1>
+<p class="lead">{{subjudul}}</p>
+<a class='btn btn-secondary' href="http://127.0.0.1:8000/produk/list-produk-dijadwalkan/" title="">Kembali</a>
+{% endblock header %}
+
+{% block content2 %}
+
+    {% autoescape off %}
+        {{ plot }}
+    {% endautoescape %}
+
+{% endblock content2 %}
+
+
+
+
+
+{% block content3 %}
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Pekerjaan</th>
+            <th>Peralatan</th>
+            <th>Grup yang Mengerjakan</th>
+            <th>Anggota Grup</th>
+            <th>Status Operasi</th>
+        </tr>
+        {% for op in operasi %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td><a href="">{{op.proses_id.nama_proses}}</a></td>
+                <td>{{op.proses_id.peralatan_id.all|join:", "}}</td>
+                <td>{{op.grup_id}}</td>
+                <td>{{op.grup_id.nama_personil}}</td>
+                <td>{{op.status_operasi}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}

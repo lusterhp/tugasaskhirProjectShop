@@ -1,0 +1,70 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% block content %}
+
+    <h1>List Proses Kerja</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Nama Proses</th>
+            <th>Kebutuhan Alat</th>
+            <th>Penghapusan</th>
+        </tr>
+        {% for list1 in List1 %}
+            <tr>
+                <td><a href="{% url 'update_proses' list1.id %}">{{list1.nama_proses}}</a></td>
+                <td>{{list1.kebutuhan_alat}}</td>
+                <td><a class='btn btn-danger' href="{% url 'delete' list1.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+
+{% block content2 %}
+
+    <h1>List Material</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Kode Material</th>
+            <th>Nama-nama Material</th>
+            <th>Nama Supplier</th>
+            <th>Produk yang Disusun</th>
+            <th>Tanggal Ditambahkan</th>
+            <th>perubah</th>
+            <th>Tanggal Material Diubah</th>
+            <th>Keterangan</th>
+            <th>Proses yang Dilakukan</th>
+            <th>Penghapusan</th>
+        </tr>
+        {% for list2 in List2 %}
+            <tr>
+                <td><a href="{% url 'update_material' list2.id %}">{{list2.kode_material}}</a></td>
+                <td>{{list2.nama_material}}</td>
+                <td>{{list2.nama_supplier}}</td>
+                <td>{{list2.variant_id}}</td>
+                <td>{{list2.tanggal_ditambahkan}}</td>
+                <td>{{list2.is_diubah}}</td>
+                <td>{{list2.tanggal_material_diubah}}</td>
+                <td>{{list2.keterangan}}</td>
+                <td>{{list2.proses_id}}</td>
+                <td><a class='btn btn-danger' href="{% url 'delete2' list2.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

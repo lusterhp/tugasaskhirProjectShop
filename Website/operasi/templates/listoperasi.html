@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% block content %}
+
+    <h1>List Jadwal Operasi</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Nama Operasi</th>
+            <th>Waktu Mulai</th>
+            <th>Waktu Selesai</th>
+            <th>Keterangan</th>
+            <th>Status Operasi</th>
+            <th>Material yang Digunakan</th>
+            <th>Lapak Pengerjaan</th>
+            <th>Penghapusan</th>
+        </tr>
+        {% for list in List %}
+            <tr>
+                <td><a href="{% url 'update_operasi' list.id %}">{{list.nama_Operasi}}</a></td>
+                <td>{{list.waktu_mulai}}</td>
+                <td>{{list.waktu_selesai}}</td>
+                <td>{{list.keterangan}}</td>
+                <td>{{list.status_operasi}}</td>
+                <td><a href="{% url 'lihat_material' list.id %}">{{list.material_id}}</a></td>
+                <td>{{list.lapakkerja_id}}</td>
+                <td><a class='btn btn-danger' href="{% url 'deleteop' list.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+{% block content2 %}
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

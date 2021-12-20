@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sistem Produksi Terdistribusi Mandiri</title>
+    {% include "snippets/style.html" %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static app_css %}">
+</head>
+<body>
+
+{% include "snippets/navbar2.html" %}
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-white">
+            {% block header %}
+            {% endblock header %}
+        </div>
+    </div>
+
+    <div class="luster container-fluid">
+        {% block content  %}
+            <h1>Sistem Penjadwalan Operasi Produksi Projectshop</h1>
+        {% endblock content %}
+    </div>
+
+    <div class="syifa container-fluid">
+        {% block content2 %}
+            <h1>Sistem Penjadwalan Kedatangan Material Production Line</h1>
+        {% endblock content2 %}
+    </div>
+
+    {% include "snippets/script.html" %}
+
+</body>
+</html>

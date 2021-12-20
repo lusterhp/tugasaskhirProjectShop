@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+<a class='btn btn-secondary' href="{% url 'homeproduk' %}" title="">Kembali</a>
+
+{% endblock header %}
+
+{% block content %}
+
+    <h1>Katalog Produk</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Nama Brand</th>
+            <th>Nama Model</th>
+            <th>Nama Variant</th>
+            <th>Atribut</th>
+            <th>Detail</th>
+            <th>Penghapusan</th>
+        </tr>
+        
+        {%for list1 in list1%}
+            <tr>
+                <td>({{list1.id_brand}}) <a href="{% url 'update_produk' list1.id %}">{{list1.nama_brand}}</a></td>
+                <td>({{list1.id_model}}) {{list1.nama_model}}</td>
+                <td>({{list1.id_varian}}) {{list1.nama_varian}}</td>
+                <td>{{list1.nama_atribut}} : {{list1.nilai_atribut}}</td>
+                <td><a class='btn btn-warning' href="{% url "list" idVarianInput=list1.id_varian %}" title="">o</a></td>
+                <td><a class='btn btn-danger' href="{% url 'deleteproduk' list1.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+
+
+{% block content2 %}
+
+{% endblock  %}
+
+
+
+{% block content3 %}
+
+{% endblock  %}

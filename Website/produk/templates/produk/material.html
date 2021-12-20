@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Form Penambahan Material</h1>
+                {% if pesan %}
+                    <div class="alert alert-success">{{pesan}}</div>
+                {% endif %}
+                <form action="/produk/tambah-material/" method="post">
+                <form method="post">
+                    {% csrf_token %}
+                    {{material|crispy}}
+
+                    <button type="Submit" class="btn btn-outline-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+{% block content2 %}
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

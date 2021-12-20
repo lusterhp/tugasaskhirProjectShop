@@ -1,0 +1,26 @@
+
+<div class="tab-pane fade" id="proses" role="tabpanel" aria-labelledby="proses-tab">
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Nama Proses</th>
+            <th>Material yang Dikerjakan</th>
+            <th>Peralatan yang Diperlukan</th>
+            <th>Grup Kerja yang Dibutuhkan</th>
+            <th>Durasi Proses (dalam menit)</th>
+            <th>Penghapusan</th>
+        </tr>
+        {% for m in bom2 %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>({{m.id_proses}}) <a href="{% url 'update_material' m.id %}">{{m.nama_proses}}</a></td>
+                <td>{{m.material_id}}</td>
+                <td>{{m.peralatan_id.all|join:", "}}</td>
+                <td>{{m.grup_id}}</td>
+                <td>{{m.durasi}}</td>
+                <td><a class='btn btn-danger' href="{% url 'deleteproses' m.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

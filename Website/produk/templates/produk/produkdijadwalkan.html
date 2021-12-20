@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="display-4">Penjadwalan Project Shop SPTM</h1>
+<p class="lead">{{subjudul}}</p>
+<a class='btn btn-secondary' href="{% url 'homeoperasi' %}" title="">Kembali</a>
+{% endblock header %}
+
+{% block content2 %}
+
+
+
+{% endblock content2 %}
+
+
+
+
+
+{% block content3 %}
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>No.</th>
+            <th>Nama Pesanan</th>
+            <th>Produk</th>
+            <th>Lokasi Pengerjaan</th>
+            <th>Estimasi<br>Pengerjaan Selesai</th>
+            <th>Permintaan Deadline</th>
+            <th>Status Operasi</th>
+            <th>Jadwal Operasi</th>
+            <th>Pembatalan</th>
+        </tr>
+        {% for home, home2 in mylist %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>({{home.id_pesanan}}) <a href="{% url 'update_produkdijadwalkan' home.id %}">{{home.nama_pesanan}}</a></td>
+                <td>{{home.produk_id}}</td>
+                <td>({{home.lapak_id}}) {{home.lapak_id.nama_lapak}}</td>
+                <td>{{home2.waktu_selesai}}</td>
+                <td>{{home.deadline_diminta}}</td>
+                <td>{{home.status_pengerjaan}}</td>
+                <td><a class='btn btn-warning' href="{% url 'jadwaloperasi' home.id %}" title="">o</a></td>
+                <td><a class='btn btn-danger' href="{% url 'deleteprodukdijadwalkan' home.id %}" title="">Batalkan</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}

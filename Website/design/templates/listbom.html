@@ -1,0 +1,35 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+<a class='btn btn-secondary' href="{% url 'listproduk' %}" title="">Kembali</a>
+
+{% endblock header %}
+
+
+{% block content %}
+
+    <div class="container" style="margin-bottom:20px;margin-top:13px;">
+        <div class="card">
+            {% include "bom_card_nav.html" %}
+            <div class="card-body tab-content">
+                {% include "listmaterial.html" %}
+                {% include "listproses.html" %}
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+
+
+{% block content2 %}
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

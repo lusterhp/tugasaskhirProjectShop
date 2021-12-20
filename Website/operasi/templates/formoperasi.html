@@ -1,0 +1,50 @@
+{% extends 'home2.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    {% if pesan %}
+        <div class="alert alert-success">{{pesan}}</div>
+    {% endif %}
+
+    <div id='calendar'></div>
+
+{% endblock  %}
+
+{% block content2 %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Form Operasi</h1>
+                <p><b>Aturan penulisan waktu:</b></p>
+                <p><b>YYYY-mm-DD HH-MM-SS</b></p>
+                <p><b>Jam ditulis dalam mode 24Jam</b></p>
+                <p><b>Contoh: 2021-08-20 14:30:59</b></p>
+
+                <form action={% url 'formop' %} method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+
+                    <button type="Submit" class="btn btn-outline-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

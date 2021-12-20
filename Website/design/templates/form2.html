@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+<a class='btn btn-secondary' href="{% url 'homeproduk' %}" title="">Kembali</a>
+
+{% endblock header %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% endblock  %}
+
+{% block content2 %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Form Material</h1>
+                {% if pesan %}
+                    <div class="alert alert-success">{{pesan}}</div>
+                {% endif %}
+                <form action="/design/formmaterial/" method="post">
+                    {% csrf_token %}
+                    {{form2|crispy}}
+
+                    <button type="Submit" class="btn btn-outline-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

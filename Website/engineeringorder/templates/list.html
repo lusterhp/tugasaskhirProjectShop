@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% block content %}
+
+    <h1>List Engineering Order</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Nomor</th>
+            <th>Kode</th>
+            <th>Material Lama</th>
+            <th>Material Pengganti</th>
+            <th>Material yang Disusun</th>
+            <th>Persetujuan</th>
+            <th>Detail</th>
+            <th>Penghapusan</th>
+        </tr>
+        {% for list, list2 in mylist %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td><a class='' href="{% url 'update_eo' list.id %}" title="">{{list2.kode_eo}}</a></td>
+                <td>({{list2.penggantiMaterial}}) {{list2.penggantiMaterial.nama_material}},<br>Supplier: {{list2.penggantiMaterial.nama_supplier}}</td>
+                <td><a class='' href="{% url 'update_meo' list2.id %}" title="">({{list2.id_materialeo}})</a> {{list2.nama_material}},<br>Supplier: {{list2.nama_supplier}}</td>
+                <td>{{list2.penyusun_produk}}</td>
+                <td><a class='' href="{% url 'update_persetujuan' list.id %}" title="">{{list.is_disetujui}}</a></td>
+                <td><a class='btn btn-warning' href="{% url 'detail_list' list.id %}" title="">o</a></td>
+                <td><a class='btn btn-danger' href="{% url 'deleteeo' list.id %}" title="">Hapus</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+{% block content2 %}
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

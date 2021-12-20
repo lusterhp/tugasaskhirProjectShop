@@ -1,0 +1,47 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% block content %}
+
+    <h1>Jadwal Produksi</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Proses</th>
+            <th>Produk</th>
+            <th>Komponen</th>
+            <th>Peralatan</th>
+            <th>Lapak Tujuan</th>
+            <th>Waktu Mulai</th>
+            <th>Waktu Selesai</th>
+        </tr>
+        {% for jadwal in Jadwal1 %}
+            <tr>
+                <td>{{jadwal.nama_proses}}</td>
+                <td>{{jadwal.produk_id.nama_produk}}</td>
+                <td>{{jadwal.material_id.keterangan}}</td>
+                <td>{{jadwal.peralatankerja_id.nama_alat}}</td>
+                <td>{{jadwal.lapakkerja_id.nama_lapak}}</td>
+                <td>{{jadwal.waktu_mulai}}</td>
+                <td>{{jadwal.waktu_selesai}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+{% block content2 %}
+
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}

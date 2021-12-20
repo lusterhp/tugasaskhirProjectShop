@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="display-4">Penjadwalan Project Shop SPTM</h1>
+<p class="lead">{{subjudul}}</p>
+<a class='btn btn-dark' href="{% url 'about' %}" title="">Tentang Pembuat</a>
+{% endblock header %}
+
+{% block content2 %}
+
+    <div class="container" style="margin-top:20px;">
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color:#343a40;">
+                    <img src="http://127.0.0.1:8000/static/img/production.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <a href="http://127.0.0.1:8000/produk/homeproduk/" class="btn" style="background-color:#bae5dd; color:#343a40; width:100%"><b>Produk</b></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color:#343a40;">
+                    <img src="http://127.0.0.1:8000/static/img/production.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <a href="http://127.0.0.1:8000/projectshop/" class="btn" style="background-color:#bae5dd; color:#343a40;width:100%;"><b>Project Shop</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content2 %}
+
+
+
+
+
+{% block content3 %}
+
+    <div class="container" style="margin-top:20px;">
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color:#343a40;">
+                    <img src="http://127.0.0.1:8000/static/img/production.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <a href="http://127.0.0.1:8000/operasi/homeoperasi" class="btn" style="background-color:#bae5dd; color:#343a40; width:100%"><b>Produksi</b></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" style="background-color:#343a40;">
+                    <img src="http://127.0.0.1:8000/static/img/production.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <a href="http://127.0.0.1:8000/engineeringorder/" class="btn" style="background-color:#bae5dd; color:#343a40;width:100%;"><b>Engineering Order</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
